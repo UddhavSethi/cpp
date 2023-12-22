@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,num,n,sum=0;
+    cout<<"How many numbers do you want to enter:";
+    cin>>n;
+    cout<<"Print sum of"<< n <<"numbers:";
+    for(i=0;i<n;i++){
+        cin>>num;
+        sum=sum+num;
+    }
+    cout<<"sum of all numbers is:"<<sum;
+}
