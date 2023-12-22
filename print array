@@ -7,3 +7,4 @@ int main()
         cout<<cost[i]<<" ";
     }
 }
+#in cpp unlike in python you cant directly print array, that would print memory location of the first element in the array instead you use for loop to iterate through all itenms and print them one by one
