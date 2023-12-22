@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,sum;
+    cout<<"enter the number of elements in array:";
+    cin>>n;
+    int elements[n];
+    cout<<"enter elements:";
+    for(i=0;i<n;i++)
+    {
+        cin>>elements[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        cout<<elements[i]<<" ";
+        sum=sum+elements[i];
+        
+    }
+        cout<<sum<<" ";
+        
+    
+}
