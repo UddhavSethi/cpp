@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i,first=0,second=1,next_numb,n;
+    cout<<"enter the last term:";
+    cin>>n;
+    cout<<1<<" "<<0;
+    for(i=0;i<n;i++)
+    {
+        next_numb=next_numb+second;
+        first=second;
+        second=next_numb;
+        
+        cout<<next_numb<<" ";
+    }
+}
