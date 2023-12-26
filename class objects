@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+class Hero  
+{
+    public:                 //access command
+    int Health;
+    int level;
+    int getHealth()         //getter
+    {
+        return Health;
+    }
+    void setHealth(int h)   //setter
+    {
+        Health=h;
+    }
+};
+int main()
+{
+    Hero Uddhav;
+    Uddhav.setHealth(100);
+    cout<<Uddhav.getHealth();
+}
