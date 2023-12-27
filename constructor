@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+class Test
+{
+    public:
+    int roll_number;
+    int marks;
+    int getroll_number()
+    {
+        return roll_number;
+    }
+
+    void setroll_number(int a)
+    {
+        roll_number=a;
+    }
+    Test()
+    {
+        cout<<"This is a constructor"<<endl;
+    }
+};
+int main()
+{
+    Test Maths;
+    cout<<Maths.roll_number<<endl;
+    Maths.setroll_number(123);
+    cout<<Maths.getroll_number();
+}
