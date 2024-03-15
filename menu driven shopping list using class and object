@@ -1,0 +1,119 @@
+#include<iostream>
+using namespace std;
+class Shopping
+{
+    private:
+    int item_code[100];      //construcotr is a special member function with same name as class used to initialsie objects of class
+    float item_cost[100]; 
+    int num_product;        //constructor is automatically invoked when object is created 
+    public:
+    Shopping()
+    {
+        num_product=0;
+    }
+    void add(int code,float cost)
+    {
+        item_code[num_product]=code;
+        item_cost[num_product]=cost;
+        num_product++;
+    }
+    float totalcost()
+    {
+        float total=0;
+        for(int i=0;i<num_product;i++)
+            {
+                total=total+item_cost[i];
+            }
+            return total;
+    }
+    void removeItem(int code)
+    {
+          for (int i = 0; i < num_product; i++)
+          {
+              if(item_code[i]==code)
+              {
+                  for(int j=i;j<num_product-1;j++)
+                  {
+                      item_code[j]=item_code[j+1];
+                      item_cost[j]=item_cost[j+1];
+                  }
+                  break;
+              }
+          }
+          num_product--;
+          
+    }
+    void display()
+    {
+        if(num_product==0)
+        {
+            cout<<"no items in list:";
+        }
+        else
+        {
+            cout<<"number of items are:"<<num_product<<endl;
+            for(int i=0;i<num_product;i++)
+            {
+                cout<<"Item code:"<<item_code[i]<<"  ";
+                cout<<"Item cost:"<<item_cost[i]<<endl;
+            }
+        }
+    }
+};
+int main()
+{
+    Shopping list;
+    int option;
+    cout<<"Choose an option:"<<endl;
+    cout<<"1)Add"<<endl;
+    cout<<"2)total cost"<<endl;
+    cout<<"3)remove item"<<endl;
+    cout<<"4)display"<<endl;
+    cout<<"5)quit"<<endl;
+    float cost;
+    int code;
+    while(1)
+    {
+        cin>>option;
+        if(option==1)
+        {
+            cout<<"enter code for the item to be added:";
+            cin>>code;
+            cin.ignore();
+            cout<<"enter the cost:";
+            cin>>cost;
+            cin.ignore();
+            list.add(code,cost);
+            
+        }
+        else if(option==2)
+        {
+            cout<<"total cost is:"<<list.totalcost();
+        }
+        else if(option==3)
+        {
+            cin >> code;
+            cin.ignore();
+            list.removeItem(code);
+        }
+        else if(option==4)
+        {
+            list.display();
+        }
+        else if(option==5)
+        {
+            break;
+        }
+        else
+        {
+            cout<<"enter a valid input:";
+            cin.ignore();
+            break;
+        }
+        
+        
+        
+    }
+    return 0;
+    
+}
