@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account
+{
+private:
+    string name;
+    int accountNumber;
+    int balanceAmount;
+
+public:
+    Account(const string& nm, int accNum, int bal) : name(nm), accountNumber(accNum), balanceAmount(bal) {}
+
+    void deposit(int d)
+    {
+        balanceAmount += d;
+    }
+
+    int displayBalance()
+    {
+        return balanceAmount;
+    }
+};
+
+int main()
+{
+    string name1, name2;
+    int acn1, acn2, ba1, ba2, d;
+
+    // Get input for customer 1
+    cin >> name1 >> acn1 >> ba1;
+
+    // Get input for customer 2
+    cin >> name2 >> acn2 >> ba2;
+
+    // Create accounts for both customers
+    Account holder1(name1, acn1, ba1);
+    Account holder2(name2, acn2, ba2);
+
+    // Deposit amount for customer 1
+    cin >> d;
+    holder1.deposit(d);
+    cout << holder1.displayBalance() << endl;
+
+    // Deposit amount for customer 2
+    cin >> d;
+    holder2.deposit(d);
+    cout << holder2.displayBalance() << endl;
+
+    return 0;
+}
