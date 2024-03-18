@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+//forward decleration::complex class aage hai 
+class Complex;
+class Calc
+{
+    public:
+    int sum(int a,int b)
+    {
+        return a+b;
+    }
+    int sumrealComplex(Complex o1,Complex o2);
+};
+
+class Complex
+{
+    int a,b;
+    friend int Calc::sumrealComplex(Complex o1,Complex o2);
+    public:
+    void setNum(int n1,int n2)
+    {
+        a=n1;
+        b=n2;
+    }
+    void printNum(void)
+    {
+        cout<<a<<"+"<<b<<"i"<<endl;
+    }
+ 
+};
+int Calc::sumrealComplex(Complex o1,Complex o2)
+{
+    return o1.a+o2.a;
+}
+int main()
+
+{
+    Complex c1,c2;
+    c1.setNum(1,2);
+    c2.setNum(5,7);
+    Calc d;
+    int r=d.sumrealComplex(c1,c2);
+    cout<<r;
+    return 0;
+}
