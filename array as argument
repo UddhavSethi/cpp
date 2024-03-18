@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+class Employee
+{
+    int id;
+    int salary;
+    public:
+    void setid(int s)
+    {
+        id=s;
+    }
+    int getid()
+    {
+        return id;
+    }
+    
+};
+int main()
+{
+    int i;
+   Employee fb[4];
+   for(i=0;i<4;i++)
+   {
+       fb[i].setid(i+1);
+       cout<<fb[i].getid()<<endl;
+   }
+    
+}
