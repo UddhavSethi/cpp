@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<string.h>
+struct Book
+{
+    int id;
+    char title[100];
+    char author[100];
+    int pages;
+    
+};
+struct Book books[100];
+int count=0;
+void addBook()
+{
+    scanf("%d",&books[count].id);
+    scanf("%s",books[count].title);
+    scanf("%s",books[count].author);
+    scanf("%d",&books[count].pages);
+    count++;
+    
+}
+void displayBook()
+{
+    for(int i=0;i<count;i++)
+    {
+        printf("%d \n",books[i].id);
+         printf("%s \n",books[i].title);
+          printf("%s \n",books[i].author);
+           printf("%d \n",books[i].pages);
+    }
+}
+void authorBook()
+{
+    char author[100];
+    scanf("%s",author);
+    for (int i= 0; i < count; i++)
+    {
+        if(strcmp(books[i].author,author)==0)
+        {
+            printf("%s \n",books[i].title);
+        }
+        else
+        {
+            printf("invalid \n");
+        }
+    }
+    
+}
+void countBook()
+{
+    printf("%d",count);
+    
+}
+int main()
+{
+    int option;
+   // printf("PRESS 1. TO ADD BOOK DETAILS \n");
+   // printf("PRESS 2.TO DISPLAY BOOK DETAILS \n");
+    //printf("PRESS 3. TO DISPLAY THE BOOK OF THE GIVEN AUTHOR \n");
+   // printf("PRESS 4. TO COUNT THE NUMBER OF BOOKS \n");
+   // printf("PRESS 5 TO EXIT \n");
+    while(1)
+    {
+        scanf("%d",&option);
+        if(option==1)
+        {
+            addBook();
+            
+            
+        }
+         else if(option==2)
+        {
+            displayBook();
+            
+            
+        }
+         else if(option==3)
+        {
+            authorBook();
+            
+        }
+         else if(option==4)
+        {
+            countBook();
+            
+        }
+         else if(option==5)
+        {
+            
+            break;
+        }
+        else
+        {
+            break;
+        }
+        
+    }
+    return 0;
+}
