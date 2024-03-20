@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+const char* week_day(int n) {
+    static const char* days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+
+    if (n > 0 && n < 7) 
+    {
+        return days[n];
+    } 
+     else if (n ==7) 
+    {
+        return days[0];
+    } 
+    else 
+    {
+        return "Invalid day";
+    }
+}
+
+int main() {
+    int day_number;
+    scanf("%d", &day_number);
+
+    const char* day_name = week_day(day_number);
+
+    printf( "%s",day_name);
+
+    return 0;
+}
